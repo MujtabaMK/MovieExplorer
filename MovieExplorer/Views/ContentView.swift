@@ -8,14 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var viewModel = MovieListViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            List {
+                ForEach(viewModel.movies) { movie in
+                    NavigationLink(destination: MovieDetailView(movie: movie)) {
+                        MovieRow(movie: movie)
+                            .onAppear {
+                                if movie == viewModel.movies.last {
+                                    viewModel.loadMovies()
+                                }
+                            }
+                    }
+                }
+            }
+            .navigationTitle("Movie Explorer")
+            .searchable(text: $viewModel.query)
+            .onAppear {
+                viewModel.loadMovies()
+            }
         }
-        .padding()
     }
 }
 
