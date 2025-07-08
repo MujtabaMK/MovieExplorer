@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		42654EF12E1D2EF400127CB1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 42654EF02E1D2EF400127CB1 /* RealmSwift */; };
+		42654EF42E1D2F0E00127CB1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 42654EF32E1D2F0E00127CB1 /* Alamofire */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		42654ED32E1D2E7A00127CB1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42654EF12E1D2EF400127CB1 /* RealmSwift in Frameworks */,
+				42654EF42E1D2F0E00127CB1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +119,8 @@
 			);
 			name = MovieExplorer;
 			packageProductDependencies = (
+				42654EF02E1D2EF400127CB1 /* RealmSwift */,
+				42654EF32E1D2F0E00127CB1 /* Alamofire */,
 			);
 			productName = MovieExplorer;
 			productReference = 42654EC22E1D2E7900127CB1 /* MovieExplorer.app */;
@@ -195,6 +204,10 @@
 			);
 			mainGroup = 42654EB92E1D2E7900127CB1;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				42654EEF2E1D2EF400127CB1 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				42654EF22E1D2F0E00127CB1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 42654EC32E1D2E7900127CB1 /* Products */;
 			projectDirPath = "";
@@ -558,6 +571,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		42654EEF2E1D2EF400127CB1 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		42654EF22E1D2F0E00127CB1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		42654EF02E1D2EF400127CB1 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42654EEF2E1D2EF400127CB1 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		42654EF32E1D2F0E00127CB1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42654EF22E1D2F0E00127CB1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 42654EBA2E1D2E7900127CB1 /* Project object */;
 }
