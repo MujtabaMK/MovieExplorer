@@ -7,9 +7,6 @@
 
 import Foundation
 
-// Models/Movie.swift
-import Foundation
-
 struct MovieResponse: Codable {
     let page: Int
     let results: [Movie]

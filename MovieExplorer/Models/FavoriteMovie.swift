@@ -14,16 +14,18 @@ class FavoriteMovie: Object, Identifiable {
     @Persisted var posterPath: String
     @Persisted var rating: Double?
     @Persisted var genreIDs: List<Int>
+    @Persisted var overview: String
+    @Persisted var releaseDate: String
 
     func asMovie() -> Movie {
         Movie(
             id: id,
             title: title,
             originalTitle: title,
-            overview: "",
+            overview: overview,
             posterPath: posterPath,
             backdropPath: nil,
-            releaseDate: "",
+            releaseDate: releaseDate,
             voteAverage: rating ?? 0.0,
             voteCount: 0,
             popularity: 0.0,

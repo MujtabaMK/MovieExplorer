@@ -29,9 +29,19 @@ class FavoriteManager {
             fav.id = movie.id
             fav.title = movie.title
             fav.posterPath = movie.posterPath ?? ""
+            fav.rating = movie.voteAverage
+            fav.overview = movie.overview
+            fav.releaseDate = movie.releaseDate
+
+            // ✅ Save genre IDs
+            let list = List<Int>()
+            movie.genreIDs.forEach { list.append($0) }
+            fav.genreIDs = list
+
             try! realm.write {
-                realm.add(fav)
+                realm.add(fav, update: .modified)
             }
+
             sendNotification(movie.title)
         }
     }
